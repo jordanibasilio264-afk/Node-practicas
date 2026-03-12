@@ -5,6 +5,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 const { InfoBanco } = require('./Bancos');
 
+app.get('/', (req,res) => {
+    res.send('Bienvenido al banco.')
+})
+
 app.get('/banco', (req,res) => {
     const resultado = InfoBanco.Bancos
     res.send(resultado)
